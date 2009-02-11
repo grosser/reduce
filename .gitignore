@@ -1,1 +1,2 @@
-spec/*.min
+pkg
+spec/files/*.min

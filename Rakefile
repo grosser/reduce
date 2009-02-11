@@ -14,6 +14,7 @@ begin
     gem.homepage = "http://github.com/grosser/reduce"
     gem.authors = ["Michael Grosser"]
     gem.add_dependency ['grosser-smusher']
+    gem.files += FileList["vendor/**/*"]
   end
 rescue LoadError
   puts "Jeweler, or one of its dependencies, is not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"

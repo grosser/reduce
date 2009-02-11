@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+require 'reduce'
+
+path = ARGV[0]
+if ARGV.length != 1 or not File.exist?(path)
+  puts "reduce FILE_TO_OPTIMIZE(js,css,jpg,png,gif)"
+  puts "reduce files/xxx.js"
+  exit
+end
+
+print Reduce.reduce(path)
