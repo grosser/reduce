@@ -15,8 +15,9 @@ Install
 Usage
 =====
     #with JS + CSS + JPG + PNG + GIF
-    #in ruby
     Reduce.reduce('files/bla.js','files/bla.min.js')
+    OR
+    reduced_data = Reduce.reduce('files/bla.js')
 
     #from command line
     reduce files/input.js > files/input.min.js
