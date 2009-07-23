@@ -5,11 +5,12 @@ Problem
 
 Solution
 ========
- - ALL IN ONE reduction simple as pie!
+ - ALL IN ONE (js + css + jpg + png + gif) reduction simple as pie!
 
 Install
 =======
-    install ruby + rubygems + curl
+    install ruby + rubygems
+    sudo gem install httpclient
     sudo gem install grosser-smusher grosser-reduce -s http://gems.github.com/
 
 Usage
