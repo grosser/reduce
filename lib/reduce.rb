@@ -1,4 +1,5 @@
 require 'smusher'
+raise "please install a newer version of smusher" if Smusher::VERSION < '0.4.0'
 
 module Reduce
   extend self
@@ -13,7 +14,7 @@ module Reduce
       else
         `java -jar #{compressor} --type #{extension} #{input}`
       end
-    when 'jpg','jpeg','png'
+    when 'jpg', 'jpeg', 'png', 'gif'
       if output
         reduce_image(input,output)
       else
@@ -28,10 +29,11 @@ module Reduce
     end
   end
 
-private
+  private
 
   def reduce_image(input,output)
     FileUtils.cp(input,output)
-    Smusher.optimize_image(output,:quiet=>true)
+    service = (input.downcase =~ /\.gif$/ ? 'PunyPng' : 'SmushIt')
+    Smusher.optimize_image(output, :quiet=>true, :service => service)
   end
 end

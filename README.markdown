@@ -1,27 +1,24 @@
-Problem
-=======
- - javascript / stylesheets minification is complicated
- - lossless image reduction requires endless libaries
-
-Solution
-========
- - ALL IN ONE (js + css + jpg + png + gif) reduction simple as pie!
+Lossless asset reduction for js, css, jpg, png, gif 
 
 Install
 =======
     install ruby + rubygems
-    sudo gem install httpclient
-    sudo gem install grosser-smusher grosser-reduce -s http://gems.github.com/
+    sudo gem install reduce
 
 Usage
 =====
-    #with JS + CSS + JPG + PNG + GIF
+    # from command line
+    reduce files/input.js > files/input.min.js
+
+    # from Ruby
     Reduce.reduce('files/bla.js','files/bla.min.js')
     OR
     reduced_data = Reduce.reduce('files/bla.js')
 
-    #from command line
-    reduce files/input.js > files/input.min.js
+How does it work?
+=================
+ - uses web-based lossless image reduction service [Smush.it](http://smush.it) / [PunyPng](http://www.gracepointafterfive.com/punypng)
+ - uses YUI compressor to minify css/js
 
 Author
 ======
