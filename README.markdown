@@ -1,4 +1,4 @@
-Lossless asset reduction for js, css, jpg, png, gif 
+Lossless reduction for js, css, jpg, png, gif 
 
 Install
 =======
@@ -7,16 +7,22 @@ Install
 
 Usage
 =====
-    # from command line
-    reduce -o files/xxx.jpg # overwrite the existing file with reduced version
-    reduce files/input.js > files/input.min.js
+    reduce -o public/image.gif
+    reduce public/javascripts/application.js > public/javascripts/application.min.js
 
-    # from Ruby
+Options
+=======
+    -o, --overwrite                  overwrite file
+    -v, --version                    Show Version
+    -h, --help                       Show this.
+
+Ruby
+====
     reduced_data = Reduce.reduce('files/bla.js')
 
 How does it work?
 =================
- - uses web-based lossless image reduction service [Smush.it](http://smush.it) / [PunyPng](http://www.gracepointafterfive.com/punypng)
+ - uses web-based lossless image reduction service [Smush.it](http://smush.it) / [PunyPng](http://www.gracepointafterfive.com/punypng) through [smusher](http://github.com/grosser/smusher)
  - uses YUI compressor to minify css/js
 
 Author
