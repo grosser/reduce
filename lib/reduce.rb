@@ -1,4 +1,3 @@
-gem 'grosser-smusher', '>=0.3.3'
 require 'smusher'
 
 module Reduce
