@@ -32,4 +32,8 @@ describe Reduce do
     Smusher.should_receive(:optimize_image).with(anything, hash_including(:service => 'SmushIt'))
     Reduce.reduce(File.join(files, 'paintcan.png'))
   end
+
+  it "has a VERSION" do
+    Reduce::VERSION.should =~ /^\d+\.\d+\.\d+$/
+  end
 end

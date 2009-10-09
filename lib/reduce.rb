@@ -4,6 +4,8 @@ raise "please install a newer version of smusher" if Smusher::VERSION < '0.4.0'
 module Reduce
   extend self
 
+  VERSION = File.read( File.join(File.dirname(__FILE__),'..','VERSION') ).strip
+
   def reduce(input,output=nil)
     extension = File.extname(input).downcase.sub('.','')
     case extension
