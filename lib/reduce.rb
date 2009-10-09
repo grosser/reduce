@@ -6,7 +6,7 @@ module Reduce
 
   VERSION = File.read( File.join(File.dirname(__FILE__),'..','VERSION') ).strip
 
-  def reduce(input,output=nil)
+  def reduce(input, output=nil)
     extension = File.extname(input).downcase.sub('.','')
     case extension
     when 'js','css'
@@ -18,10 +18,10 @@ module Reduce
       end
     when 'jpg', 'jpeg', 'png', 'gif'
       if output
-        reduce_image(input,output)
+        reduce_image(input, output)
       else
         output = input+'.temp'
-        reduce_image(input,output)
+        reduce_image(input, output)
         data = File.read(output)
         FileUtils.rm(output)
         data
@@ -33,8 +33,8 @@ module Reduce
 
   private
 
-  def reduce_image(input,output)
-    FileUtils.cp(input,output)
+  def reduce_image(input, output)
+    FileUtils.cp(input, output)
     service = (input.downcase =~ /\.gif$/ ? 'PunyPng' : 'SmushIt')
     Smusher.optimize_image(output, :quiet=>true, :service => service)
   end

@@ -8,6 +8,7 @@ Install
 Usage
 =====
     # from command line
+    reduce -o files/xxx.jpg # overwrite the existing file with reduced version
     reduce files/input.js > files/input.min.js
 
     # from Ruby
