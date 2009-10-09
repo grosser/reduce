@@ -12,8 +12,6 @@ Usage
     reduce files/input.js > files/input.min.js
 
     # from Ruby
-    Reduce.reduce('files/bla.js','files/bla.min.js')
-    OR
     reduced_data = Reduce.reduce('files/bla.js')
 
 How does it work?

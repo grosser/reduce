@@ -6,36 +6,30 @@ module Reduce
 
   VERSION = File.read( File.join(File.dirname(__FILE__),'..','VERSION') ).strip
 
-  def reduce(input, output=nil)
-    extension = File.extname(input).downcase.sub('.','')
+  def reduce(file)
+    extension = File.extname(file).downcase.sub('.','')
     case extension
     when 'js','css'
       compressor = File.join(File.dirname(__FILE__),'..','vendor','yuicompressor*.jar')
-      if output
-        `java -jar #{compressor} --type #{extension} #{input} > #{output}`
-      else
-        `java -jar #{compressor} --type #{extension} #{input}`
-      end
+      `java -jar #{compressor} --type #{extension} #{file}`
     when 'jpg', 'jpeg', 'png', 'gif'
-      if output
-        reduce_image(input, output)
-      else
-        output = input+'.temp'
-        reduce_image(input, output)
-        data = File.read(output)
-        FileUtils.rm(output)
-        data
-      end
+      reduce_image file
     else
-      raise "WTF? a .#{extension} file...."
+      raise "reduce does not know how to handle a .#{extension} file (#{file})"
     end
   end
 
   private
 
-  def reduce_image(input, output)
+  def reduce_image(input)
+    output = input+'.temp'
     FileUtils.cp(input, output)
+
     service = (input.downcase =~ /\.gif$/ ? 'PunyPng' : 'SmushIt')
     Smusher.optimize_image(output, :quiet=>true, :service => service)
+
+    data = File.read(output)
+    FileUtils.rm(output)
+    data
   end
 end

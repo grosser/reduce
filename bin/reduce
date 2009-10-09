@@ -1,12 +1,33 @@
 #!/usr/bin/env ruby
 require 'rubygems'
+require 'optparse'
 require 'reduce'
 
-path = ARGV[0]
-if ARGV.length != 1 or not File.exist?(path)
-  puts "reduce FILE_TO_OPTIMIZE(js,css,jpg,png,gif)"
-  puts "reduce files/xxx.js"
-  exit
-end
+options = {}
+OptionParser.new do |opts|
+  opts.banner = <<BANNER
+Lossless optimize js, css, jpg, png, gif
 
-print Reduce.reduce(path)
+Usage:
+    reduce -o public/image.gif
+    reduce public/javascripts/application.js > public/javascripts/application.min.js
+
+Options are:
+BANNER
+  opts.on("-o", "--overwrite", "overwrite file") { options[:overwrite]=true }
+  opts.on('-v', '--version', 'Show Version'){ puts Reduce::VERSION; exit}
+  opts.on("-h", "--help", "Show this.") { puts opts; exit }
+end.parse!
+
+file = ARGV.first
+if file.to_s.empty? or not File.exist?(file)
+  puts "Usage instructions: reduce --help"
+  exit
+else
+  data = Reduce.reduce(file)
+  if options[:overwrite]
+    File.open(file, 'w'){|f| f.print data}
+  else
+    print data
+  end
+end
