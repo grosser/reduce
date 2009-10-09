@@ -1,9 +1,14 @@
 require File.expand_path("spec_helper", File.dirname(__FILE__))
 files = File.join(File.dirname(__FILE__),'files')
 
-describe Reduce do
+def cleanup(files)
   Dir[files+'/*.min.*', files+'/*.temp'].each{|f| FileUtils.rm(f)}
+end
 
+describe Reduce do
+  after(:all){ cleanup(files) }
+
+  cleanup(files)
   Dir[files+'/*.*'].each do |file|
     extension = File.extname(file)
     it "reduces #{extension} and stores in output" do
