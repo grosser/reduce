@@ -1,0 +1,27 @@
+PATH
+  remote: .
+  specs:
+    reduce (0.2.0)
+      smusher
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    bump (0.3.8)
+    httpclient (2.3.0.1)
+    json (1.7.5)
+    rake (10.0.3)
+    rspec (1.3.2)
+    smusher (0.4.9)
+      httpclient (>= 2.2)
+      json
+      rake
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bump
+  rake
+  reduce!
+  rspec (~> 1)
