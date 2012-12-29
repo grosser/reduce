@@ -23,7 +23,8 @@ Ruby
 How does it work?
 =================
  - uses web-based lossless image reduction service [Smush.it](http://smush.it) / [PunyPng](http://www.gracepointafterfive.com/punypng) through [smusher](http://github.com/grosser/smusher)
- - uses YUI compressor to minify css/js
+ - uses [YUI compressor](https://developer.yahoo.com/yui/compressor/) to minify css/js
+ - uses [htmlcompressor](https://code.google.com/p/htmlcompressor/) to minify html/xml
 
 Author
 ======
