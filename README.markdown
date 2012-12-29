@@ -1,4 +1,4 @@
-Lossless reduction for js, css, jpg, png, gif 
+Lossless reduction for js, css, jpg, png, gif
 
 Install
 =======
@@ -27,6 +27,6 @@ How does it work?
 
 Author
 ======
-Michael Grosser  
-grosser.michael@gmail.com  
-Hereby placed under public domain, do what you want, just do not hold me accountable...  
+Michael Grosser<br/>
+grosser.michael@gmail.com<br/>
+Hereby placed under public domain, do what you want, just do not hold me accountable...
