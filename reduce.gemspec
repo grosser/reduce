@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Michael Grosser"]
-  s.date = %q{2009-11-22}
+  s.date = %q{2012-12-29}
   s.default_executable = %q{reduce}
   s.email = %q{grosser.michael@gmail.com}
   s.executables = ["reduce"]
@@ -31,7 +31,8 @@ Gem::Specification.new do |s|
      "spec/reduce_spec.rb",
      "spec/spec_helper.rb",
      "vendor/README",
-     "vendor/yuicompressor-2.4.2.jar"
+     "vendor/yuicompressor-2.4.6.jar",
+     "vendor/htmlcompressor-1.5.3.jar"
   ]
   s.homepage = %q{http://github.com/grosser/reduce}
   s.rdoc_options = ["--charset=UTF-8"]

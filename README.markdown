@@ -1,4 +1,4 @@
-Lossless reduction for js, css, jpg, png, gif
+Lossless reduction for js, css, html, xml, jpg, png, gif
 
 Install
 =======
