@@ -28,11 +28,12 @@ Gem::Specification.new do |s|
      "spec/files/facebox.js",
      "spec/files/paintcan.png",
      "spec/files/test.gif",
+     "spec/files/wikipedia.html",
      "spec/reduce_spec.rb",
      "spec/spec_helper.rb",
+     "vendor/htmlcompressor-1.5.3.jar",
      "vendor/README",
-     "vendor/yuicompressor-2.4.6.jar",
-     "vendor/htmlcompressor-1.5.3.jar"
+     "vendor/yuicompressor-2.4.6.jar"
   ]
   s.homepage = %q{http://github.com/grosser/reduce}
   s.rdoc_options = ["--charset=UTF-8"]
