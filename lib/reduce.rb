@@ -11,7 +11,7 @@ module Reduce
     case extension
     when 'html', 'xml'
       compressor = File.join(File.dirname(__FILE__),'..','vendor','htmlcompressor*.jar')
-      `java -jar #{compressor} --type #{extension} #{file}`
+      `java -jar #{compressor} --type #{extension} --compress-js --compress-css #{file}`
     when 'js','css'
       compressor = File.join(File.dirname(__FILE__),'..','vendor','yuicompressor*.jar')
       `java -jar #{compressor} --type #{extension} #{file}`
