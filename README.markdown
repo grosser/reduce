@@ -26,10 +26,6 @@ How does it work?
  - uses [YUI compressor](https://developer.yahoo.com/yui/compressor/) to minify css/js
  - uses [htmlcompressor](https://code.google.com/p/htmlcompressor/) to minify html/xml
 
-TODO
-====
- - convert to gem management via bundler
-
 Author
 ======
 Michael Grosser<br/>
