@@ -28,6 +28,10 @@ How does it work?
 
 Author
 ======
+
+### [Contributors](https://github.com/grosser/reduce/contributors)
+ - [Emanuele Bardelli](https://github.com/pacbard)
+
 Michael Grosser<br/>
 grosser.michael@gmail.com<br/>
 License: MIT
