@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    reduce (0.2.0)
+    reduce (0.3.0)
       smusher
 
 GEM
