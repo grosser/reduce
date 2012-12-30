@@ -4,4 +4,4 @@ gemspec
 
 gem 'bump'
 gem 'rake'
-gem 'rspec', '~>1'
+gem 'rspec', '~> 2'
