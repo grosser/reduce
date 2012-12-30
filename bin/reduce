@@ -6,7 +6,7 @@ require 'reduce'
 options = {}
 OptionParser.new do |opts|
   opts.banner = <<BANNER
-Lossless optimize js, css, jpg, png, gif
+Lossless optimize js, css, html, xml, jpg, png, gif
 
 Usage:
     reduce -o public/image.gif
